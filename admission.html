@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admission | Skylar Academy</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#080808;
+font-family:Poppins,sans-serif;
+color:white;
+}
+
+.admission{
+padding:120px 8%;
+display:flex;
+justify-content:center;
+}
+
+.form-box{
+
+width:100%;
+max-width:700px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 0 25px rgba(255,136,0,.3);
+
+}
+
+h1{
+
+text-align:center;
+
+color:#ff8800;
+
+margin-bottom:30px;
+
+}
+
+.input-group{
+
+margin-bottom:20px;
+
+}
+
+.input-group label{
+
+display:block;
+
+margin-bottom:8px;
+
+}
+
+.input-group input,
+
+.input-group select,
+
+.input-group textarea{
+
+width:100%;
+
+padding:15px;
+
+background:#111;
+
+border:1px solid #333;
+
+border-radius:10px;
+
+color:white;
+
+font-size:16px;
+
+}
+
+.input-group textarea{
+
+height:120px;
+
+resize:none;
+
+}
+
+button{
+
+width:100%;
+
+padding:15px;
+
+background:#ff8800;
+
+color:white;
+
+font-size:18px;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+button:hover{
+
+box-shadow:0 0 20px orange;
+
+transform:translateY(-3px);
+
+}
+
+.note{
+
+margin-top:20px;
+
+text-align:center;
+
+color:#ccc;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Skylar Academy
+
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="teachers.html">Teachers</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="results.html">Results</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="admission">
+
+<div class="form-box" data-aos="zoom-in">
+
+<h1>Admission Form</h1>
+
+<form id="admissionForm">
+
+<div class="input-group">
+
+<label>Student Name</label>
+
+<input type="text" id="name" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Father's Name</label>
+
+<input type="text" id="father" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Mobile Number</label>
+
+<input type="tel" id="mobile" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Email</label>
+
+<input type="email" id="email">
+
+</div>
+
+<div class="input-group">
+
+<label>Class</label>
+
+<select id="course">
+
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+<option>Class 11</option>
+<option>Class 12</option>
+<option>JEE Foundation</option>
+<option>NEET Foundation</option>
+<option>Navodaya</option>
+<option>Sainik School</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Address</label>
+
+<textarea id="address"></textarea>
+
+</div>
+
+<button type="submit">
+
+<i class="fab fa-whatsapp"></i>
+
+Submit on WhatsApp
+
+</button>
+
+</form>
+
+<p class="note">
+
+Our admission team will contact you shortly.
+
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+document.getElementById("admissionForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+
+let father=document.getElementById("father").value;
+
+let mobile=document.getElementById("mobile").value;
+
+let email=document.getElementById("email").value;
+
+let course=document.getElementById("course").value;
+
+let address=document.getElementById("address").value;
+
+let message=
+
+`*New Admission Request*%0A%0A
+
+👤 Student: ${name}
+
+%0A👨 Father: ${father}
+
+%0A📱 Mobile: ${mobile}
+
+%0A📧 Email: ${email}
+
+%0A🎓 Course: ${course}
+
+%0A🏠 Address: ${address}`;
+
+window.open("https://wa.me/9153803347?text="+message,"_blank");
+
+});
+
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+duration:1000,
+
+once:true
+
+});
+
+</script>
+
+</body>
+</html
